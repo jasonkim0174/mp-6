@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { User } from "@/types/User";
+import Image from "next/image";
+
 
 export default function UserPage() {
   const [user, setUser] = useState<User | null>(null);
@@ -41,7 +43,7 @@ export default function UserPage() {
   return (
     <div className="container bg-white p-8 rounded shadow-2xl max-w-md text-center">
       <h1 className="text-2xl font-bold mb-4">Profile</h1>
-      <img
+      <Image
         src={user.picture || "/default-profile.png"}
         alt="Profile Picture"
         className="w-24 h-24 rounded-full mx-auto mb-4"

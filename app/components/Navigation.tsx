@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+
 
 export default function NavBar() {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -24,12 +26,12 @@ export default function NavBar() {
       </div>
       <ul className="flex space-x-6">
         <li>
-          <a
+          <Link
             href="/user"
             className="text-lg font-medium hover:text-gray-200 transition duration-200"
           >
             View Profile
-          </a>
+          </Link>
         </li>
         {isSignedIn ? (
           <li>
@@ -42,12 +44,12 @@ export default function NavBar() {
           </li>
         ) : (
           <li>
-            <a
+            <Link
               href="/api/auth/login"
               className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition duration-200"
             >
               Sign In
-            </a>
+            </Link>
           </li>
         )}
       </ul>
